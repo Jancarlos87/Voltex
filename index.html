@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PC Hardware - tienda de componentes y periféricos">
+  <title>PC Hardware | Tienda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-pc">PC</span> HARDWARE
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#productos">Productos</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="cart-button" id="openCart" aria-label="Abrir carrito">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-button" id="menuButton" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#productos">Productos</a>
+    <a href="#categorias">Categorías</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">TIENDA ONLINE</p>
+        <h1>PC <span>HARDWARE</span></h1>
+        <p class="hero-text">Componentes, periféricos y tecnología para armar tu PC ideal.</p>
+      </div>
+    </section>
+
+    <section class="catalog" id="productos">
+      <div class="tabs" id="categorias">
+        <button class="tab active" data-category="Todos">Todos</button>
+        <button class="tab" data-category="Componentes">Componentes</button>
+        <button class="tab" data-category="Periféricos">Periféricos</button>
+      </div>
+
+      <div class="tools">
+        <button class="tool-button" id="filterButton">☷ <span>Filtrar</span></button>
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Buscar">
+        </div>
+      </div>
+
+      <div class="filter-panel" id="filterPanel">
+        <button data-price="all" class="price-filter active">Todos</button>
+        <button data-price="500">Menos de $500</button>
+        <button data-price="1000">Menos de $1000</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head">
+      <h2>Tu carrito</h2>
+      <button id="closeCart" class="close-button">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Total</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button class="checkout-button" id="checkoutButton">Pedir por WhatsApp</button>
+      <button class="clear-button" id="clearCart">Vaciar carrito</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <a class="whatsapp" id="whatsappButton" href="#" target="_blank" aria-label="WhatsApp">☎</a>
+
+  <footer id="contacto">
+    <strong>PC HARDWARE</strong>
+    <span>Componentes y periféricos</span>
+    <span>© 2026 Todos los derechos reservados</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

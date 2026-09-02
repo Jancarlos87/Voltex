@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administración | PC Hardware</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header>
+  <div class="logo"><b>PC</b> HARDWARE <span>ADMIN</span></div>
+  <a href="index.html">← Ver tienda</a>
+</header>
+
+<main>
+  <section class="intro">
+    <div>
+      <p>ADMINISTRACIÓN</p>
+      <h1>Productos</h1>
+      <span>Agrega, edita o elimina los productos de tu catálogo.</span>
+    </div>
+    <button class="primary" id="newProduct">+ Agregar producto</button>
+  </section>
+
+  <section class="stats">
+    <div><b id="totalProducts">0</b><span>Productos</span></div>
+    <div><b id="componentCount">0</b><span>Componentes</span></div>
+    <div><b id="peripheralCount">0</b><span>Periféricos</span></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Catálogo</h2>
+      <div class="actions">
+        <input id="adminSearch" placeholder="Buscar producto...">
+        <button id="exportProducts">Exportar</button>
+        <label class="import-btn">Importar<input id="importProducts" type="file" accept=".json" hidden></label>
+        <button id="resetProducts" class="danger-outline">Restaurar</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Etiqueta</th><th>Acciones</th></tr></thead>
+        <tbody id="productTable"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <div class="modal-head"><h2 id="modalTitle">Agregar producto</h2><button id="closeModal">×</button></div>
+    <form id="productForm">
+      <input type="hidden" id="productId">
+      <label>Nombre del producto<input id="name" required maxlength="100"></label>
+      <div class="two">
+        <label>Precio (USD)<input id="price" type="number" min="0" step="1" required></label>
+        <label>Categoría<select id="category"><option>Componentes</option><option>Periféricos</option></select></label>
+      </div>
+      <label>Etiqueta <select id="badge"><option value="">Sin etiqueta</option><option>A ESTRENAR</option><option>OFERTA</option><option>NUEVO</option></select></label>
+      <label>Especificaciones<textarea id="specs" rows="4" placeholder="Ej.: 8GB GDDR7 · PCIe 5.0 · DLSS 4"></textarea></label>
+      <label>Imagen del producto<input id="image" placeholder="assets/mi-producto.jpg"></label>
+      <p class="hint">Puedes usar una ruta como <b>assets/mi-producto.jpg</b> si subes la imagen a la carpeta <b>assets</b> de GitHub.</p>
+      <div class="preview"><img id="preview" alt="Vista previa"></div>
+      <div class="form-actions"><button type="button" id="cancel" class="secondary">Cancelar</button><button class="primary" type="submit">Guardar producto</button></div>
+    </form>
+  </div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
